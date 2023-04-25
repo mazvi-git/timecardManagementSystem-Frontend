@@ -1,6 +1,6 @@
 <div class="main-content">
   <h1>
-     Job Code Management
+    Job Code Management
   </h1>
     <div>
         <a href="#" class="btn btn-success">Add New Job</a>
@@ -15,9 +15,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let j of jobs" >
-          <td>{{j.jobName}}</td>
+          <td>{{j.name}}</td>
           <td>{{j.description}}</td>
-          <td>{{j.hourlyRate}}</td>
+          <td>{{j.hourlyRate | currency:'USD'}}</td>
           <td>{{j.maxNumOfHrPerDay}}</td>
           <td>
             <a href="#" class="btn btn-primary">Edit</a>
