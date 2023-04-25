@@ -20,7 +20,7 @@ import { MachineListComponent } from './components/machine-list/machine-list.com
     MachineFormComponent,
     JobListComponent,
     MachineListComponent,
-   ],
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule
