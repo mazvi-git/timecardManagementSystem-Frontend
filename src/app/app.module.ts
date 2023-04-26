@@ -14,13 +14,21 @@ import { JobService } from './services/job.service';
 import { MachineService } from './services/machine.service';
 import { TimecardService } from './services/timecard.service';
 import { JobDetailsComponent } from './components/job/job-details/job-details.component';
+import { MachineDetailsComponent } from './components/machine/machine-details/machine-details.component';
+import { LoginComponent } from './components/login/login.component';
+import { TimecardDetailsComponent } from './components/timecard/timecard-details/timecard-details.component';
 
 
 const routes: Routes = [
-  {path: 'jobs/:id', component: JobListComponent},
-  {path: 'machines/:id', component: MachineListComponent},
+  {path: 'jobs/:id', component: JobDetailsComponent},
+  {path: 'machines/:id', component: MachineDetailsComponent},
+  {path: 'timecards/:id', component: TimecardDetailsComponent},
   {path: 'jobs', component: JobListComponent},
-  {path: 'machines', component: MachineListComponent}
+  { path: 'machines', component: MachineListComponent },
+  { path: 'timecards', component: TimecardListComponent },
+  { path: ' ', redirectTo: '/login', pathMatch: 'full' },
+  {path: '**', redirectTo: '/login', pathMatch: 'full'}
+  
 ]
 
 
@@ -34,6 +42,9 @@ const routes: Routes = [
     JobListComponent,
     MachineListComponent,
     JobDetailsComponent,
+    MachineDetailsComponent,
+    LoginComponent,
+    TimecardDetailsComponent,
   ],
   imports: [
     BrowserModule,
