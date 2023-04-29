@@ -9,7 +9,7 @@ import { JobFormComponent } from './components/job/job-form/job-form.component';
 import { MachineFormComponent } from './components/machine/machine-form/machine-form.component';
 import { JobListComponent } from './components/job/job-list/job-list.component';
 import { MachineListComponent } from './components/machine/machine-list/machine-list.component';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { JobService } from './services/job.service';
 import { MachineService } from './services/machine.service';
 import { TimecardService } from './services/timecard.service';
@@ -26,8 +26,13 @@ const routes: Routes = [
   {path: 'jobs', component: JobListComponent},
   { path: 'machines', component: MachineListComponent },
   { path: 'timecards', component: TimecardListComponent },
-  { path: ' ', redirectTo: '/login', pathMatch: 'full' },
-  {path: '**', redirectTo: '/login', pathMatch: 'full'}
+  { path: ' ', redirectTo: '/jobs', pathMatch: 'full' },
+  {path: '**', redirectTo: '/jobs', pathMatch: 'full'}
+
+  // TODO LOGIN ROUTES FOR LATER
+  // {path: 'login', component: LoginComponent},
+  // { path: ' ', redirectTo: '/login', pathMatch: 'full' },
+  // {path: '**', redirectTo: '/login', pathMatch: 'full'}
   
 ]
 
@@ -47,6 +52,7 @@ const routes: Routes = [
     TimecardDetailsComponent,
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     AppRoutingModule
   ],
