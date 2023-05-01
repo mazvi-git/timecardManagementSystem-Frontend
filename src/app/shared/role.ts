@@ -1,4 +1,4 @@
 export class Role {
-    id: string;
-    name: string;
+
+    constructor(public id: number, public name: string){}
 }

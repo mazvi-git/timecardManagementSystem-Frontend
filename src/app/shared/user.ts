@@ -1,7 +1,6 @@
+import { Role } from "./role";
+
 export class User {
-    id: string;
-    name: string;
-    email: string;
-    password:string;
-    role: Role;
+
+    constructor(public id: number, public name: string, public email: string, public password: string, public role: Role){}
 }

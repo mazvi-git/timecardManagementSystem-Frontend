@@ -1,13 +1,11 @@
+import { Job } from "./job";
+import { Machine } from "./machine";
 import { Site } from "./site";
+import { User } from "./user";
 
 export class Timecard {
-    id: string;
-    name: string;
-    submissionDate: Date;
-    site: Site;
-    status: string;
-    job: Job;
-    machine: Machine;
-    contractor: User;
-    approvedBy: User;
+
+
+    constructor(public id: number, public name: string, public submissionDate: Date, public site: Site, public status: string, public job: Job, public machine: Machine, public contractor: User, public approvedBy: User){}
+
 }

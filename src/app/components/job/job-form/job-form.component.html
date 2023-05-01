@@ -1,0 +1,22 @@
+
+<div>
+   
+   <form [formGroup]="jobForm" (ngSubmit)="onSubmit()" >
+   
+      <label for="jobCode">Job Code: </label>
+      <input id="jobCode" type="text" formControlName="jobCode">
+   
+      <label for="description">Description: </label>
+      <input id="description" type="text" formControlName="description">
+   
+      <label for="hourlyRate">Hourly Rate: </label>
+      <input id="hourlyRate" type="number" formControlName="hourlyRate">
+   
+      <label for="maxHours">Max Hours: </label>
+      <input id="maxHours" type="number" formControlName="maxHours">
+   
+      <p>Please complete the entire form.</p>
+      <button type="submit" [disabled]="!jobForm.valid">Submit</button>
+   
+   </form>
+</div>
