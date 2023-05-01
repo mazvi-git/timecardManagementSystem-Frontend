@@ -17,22 +17,22 @@ import { JobDetailsComponent } from './components/job/job-details/job-details.co
 import { MachineDetailsComponent } from './components/machine/machine-details/machine-details.component';
 import { LoginComponent } from './components/login/login.component';
 import { TimecardDetailsComponent } from './components/timecard/timecard-details/timecard-details.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 const routes: Routes = [
   {path: 'jobs/:id', component: JobDetailsComponent},
+  {path: 'jobs', component: JobListComponent},
   {path: 'machines/:id', component: MachineDetailsComponent},
   {path: 'timecards/:id', component: TimecardDetailsComponent},
-  {path: 'jobs', component: JobListComponent},
+  {path: 'job-form', component: JobFormComponent},
+  { path: 'machine-form', component: MachineFormComponent },
   { path: 'machines', component: MachineListComponent },
+  { path: 'timecard-form', component: TimecardFormComponent },
   { path: 'timecards', component: TimecardListComponent },
-  { path: ' ', redirectTo: '/jobs', pathMatch: 'full' },
-  {path: '**', redirectTo: '/jobs', pathMatch: 'full'}
-
-  // TODO LOGIN ROUTES FOR LATER
-  // {path: 'login', component: LoginComponent},
-  // { path: ' ', redirectTo: '/login', pathMatch: 'full' },
-  // {path: '**', redirectTo: '/login', pathMatch: 'full'}
+  {path: 'login', component: LoginComponent},
+  { path: ' ', redirectTo: '/login', pathMatch: 'full' },
+  {path: '**', redirectTo: '/login', pathMatch: 'full'}
   
 ]
 
@@ -40,21 +40,22 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    JobFormComponent,
+    JobListComponent,
+    JobDetailsComponent,
+    MachineFormComponent,
+    MachineListComponent,
+    MachineDetailsComponent,
     TimecardListComponent,
     TimecardFormComponent,
-    JobFormComponent,
-    MachineFormComponent,
-    JobListComponent,
-    MachineListComponent,
-    JobDetailsComponent,
-    MachineDetailsComponent,
-    LoginComponent,
     TimecardDetailsComponent,
   ],
   imports: [
     RouterModule.forRoot(routes),
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [
     JobService, MachineService, TimecardService
