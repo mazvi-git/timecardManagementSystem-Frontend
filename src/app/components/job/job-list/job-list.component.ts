@@ -20,6 +20,11 @@ export class JobListComponent implements OnInit{
     //   () => console.log('Complete')  
     // )
   }
+
+  editJob() {
+    console.log(Job.toString)
+  }
+
   deleteJob(jobID: number){
     console.log('Does nothing right now'+jobID);
   }
